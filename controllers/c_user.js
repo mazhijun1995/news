@@ -25,7 +25,7 @@ exports.handleSignin = (req,res) => {
         }
         //邮箱存在，开始验证密码
         //密码不正确
-        if(results[0].paasword !== body.password) {
+        if(results[0].password !== body.password) {
             return res.send({
                 code:2,
                 message: '密码不正确'

@@ -46,8 +46,24 @@
             //获取表单中的数据
             var formdata = $(this).serialize();
             //发送ajax
-            $.post('/signin',formdata,(function(data){
-                console.log(data);
+            $.post('/handleSignin',formdata,(function(data){
+               // console.log(data);
+               switch (data.code) {
+                case 1:
+                   alert(data.message);
+                    break;
+                case 2:
+                   alert(data.message);
+                   break;
+                case 500:
+                   alert(data.message);
+                   break;
+                case 200:
+                   window.location.href = '/';
+                   break;
+                default:
+                    break;
+               }
             }));
         });
     </script>
